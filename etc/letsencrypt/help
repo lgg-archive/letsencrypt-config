@@ -1,0 +1,10 @@
+/etc/letssl/update_ssl - script
+/usr/local/letssl/ - configs path
+
+
+
+/opt/letsencrypt/letsencrypt-auto certonly --webroot -w /var/www/site/ -d blog.mysite.ru
+
+ls -l /etc/letsencrypt/live
+
+

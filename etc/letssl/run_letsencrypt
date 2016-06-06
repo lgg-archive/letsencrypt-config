@@ -1,0 +1,62 @@
+#!/bin/bash
+
+#Vars
+web_service='nginx'
+config_path='/usr/local/letssl/'
+le_path='/opt/letsencrypt'
+exp_limit=40;
+
+#Func
+function check_ssl {
+        nowdate=$(date +"%d/%m")
+        log=("["$nowdate"]: ")
+        if [ -f $1 ]; then
+                #find domain
+                domain=`grep "^\s*domains" $1 | sed "s/^\s*domains\s*=\s*//" | sed 's/(\s*)\|,.*$//'`
+                cert_file="/etc/letsencrypt/live/$domain/fullchain.pem"
+
+                log+="[$domain] "
+
+                #check if cert exist
+                if [ ! -f $cert_file ]; then
+                        log+="[ERROR] certificate file not found for domain $domain."
+                fi
+
+                #get exp date
+                exp=$(date -d "`openssl x509 -in $cert_file -text -noout|grep "Not After"|cut -c 25-`" +%s)
+                datenow=$(date -d "now" +%s)
+                days_exp=$(echo \( $exp - $datenow \) / 86400 |bc)
+
+                #echo "Checking expiration date for $domain..."
+
+                #check exp date
+                if [ "$days_exp" -gt "$exp_limit" ] ; then
+                        log+=" The certificate is up to date, no need for renewal ($days_exp days left)."
+                else
+                        echo "The certificate for $domain is about to expire soon. Starting webroot renewal script..."
+
+                        #update cert
+                        $le_path/letsencrypt-auto certonly -a webroot --agree-tos --renew-by-default --config $1
+
+                        #reload webserver
+                        echo "Reloading $web_service"
+                        /usr/sbin/service $web_service reload
+
+                        #done
+                        echo "Renewal process finished for domain $domain"
+                fi
+        else
+                log+="[ERROR] config file does not exist: $1"
+        fi
+        echo $log
+}
+
+#loop
+configs="$config_path*.ini"
+for f in $configs
+do
+        #echo $f
+        check_ssl $f
+done
+
+exit 0;
