@@ -69,6 +69,11 @@ server {
         ssl_certificate_key /etc/letsencrypt/live/site.com/privkey.pem;
 ```
 * if you use php, don't forget to add `fastcgi_param HTTPS on;` to your php section
+* if you want to handle error(The plain HTTP request was sent to HTTPS port), when ssl is on another port(not 443) and somebody http://site.com:8888
+```
+# This will redirect to google.com in this case
+error_page 497 https://google.com;
+```
 
 ## TroubleShooting
 
