@@ -20,6 +20,7 @@ Here you will found:
 * create [aliases](./aliases.md)
 * `mkdir /etc/letssl`
 * paste files from repo's `/etc/letssl/` to your server `/etc/letssl/`
+* add execution right for scripts `chmod +x run_letsencrypt && chmod +x update_ssl`
 * `mkdir /usr/local/letssl`
 * paste `config-sample.ini` from repo to your server
 * rename it to `mv config-sample.ini sample`
