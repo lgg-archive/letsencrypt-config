@@ -1,0 +1,17 @@
+## update script:
+/etc/letssl/update_ssl
+
+## configs path:
+/usr/local/letssl/
+
+## certificates:
+ls -l /etc/letsencrypt/live
+
+
+# Commands
+
+## manually:
+/opt/certbot/certbot-auto certonly --webroot -w /var/www/site/ -d blog.mysite.ru
+
+## with config file(*.ini):
+/opt/certbot/certbot-auto certonly -a webroot --agree-tos --renew-by-default --config /usr/local/letssl/site.com.ini
