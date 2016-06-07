@@ -68,6 +68,7 @@ server {
         ssl_certificate /etc/letsencrypt/live/site.com/fullchain.pem;
         ssl_certificate_key /etc/letsencrypt/live/site.com/privkey.pem;
 ```
+* if you use php, don't forget to add `fastcgi_param HTTPS on;` to your php section
 
 ## TroubleShooting
 
