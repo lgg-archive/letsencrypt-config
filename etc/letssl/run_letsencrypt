@@ -3,7 +3,7 @@
 #Vars
 web_service='nginx'
 config_path='/usr/local/letssl/'
-le_path='/opt/letsencrypt'
+le_path='/opt/certbot'
 exp_limit=40;
 
 #Func
@@ -36,7 +36,7 @@ function check_ssl {
                         echo "The certificate for $domain is about to expire soon. Starting webroot renewal script..."
 
                         #update cert
-                        $le_path/letsencrypt-auto certonly -a webroot --agree-tos --renew-by-default --config $1
+                        $le_path/certbot-auto certonly -a webroot --agree-tos --renew-by-default --config $1
 
                         #reload webserver
                         echo "Reloading $web_service"
