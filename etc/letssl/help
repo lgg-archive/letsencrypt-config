@@ -1,3 +1,7 @@
+## aliases
+ls_l - list certificates
+ls_lc - list configs
+
 ## update script:
 /etc/letssl/update_ssl
 
