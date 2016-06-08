@@ -77,6 +77,9 @@ error_page 497 https://google.com;
 
 ## TroubleShooting
 
+* check logs:
+    * `vi /etc/letssl/update.log`
+    * `vi /etc/letssl/update2.log`
 * check if `site.com/.well-known/` is accessible
     * if not - allow it in your webservers's config
 * try to run it manually
