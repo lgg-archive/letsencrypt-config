@@ -11,6 +11,11 @@ ls_lc - list configs
 ## certificates:
 ls -l /etc/letsencrypt/live
 
+## logs
+vi /etc/letssl/update.log
+vi /etc/letssl/update2.log
+
+
 
 # Commands
 
