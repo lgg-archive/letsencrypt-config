@@ -1,0 +1,8 @@
+/var/log/letssl/*.log {
+    monthly
+    rotate 12
+    compress
+    notifempty
+    missingok
+    notifempty
+}
