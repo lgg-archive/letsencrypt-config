@@ -9,6 +9,7 @@ cp ./etc/logrotate.d/logrotate_config /etc/logrotate.d/letsencrypt
 # create /etc/letssl scripts
 mkdir /etc/letssl/
 cp ./etc/letssl/* /etc/letssl/
+chmod +x /etc/letssl/run_letsencrypt && chmod +x /etc/letssl/update_ssl
 
 # create config sample for let's encrypt
 mkdir /usr/local/letssl/
