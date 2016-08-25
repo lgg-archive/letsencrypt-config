@@ -14,3 +14,10 @@ chmod +x /etc/letssl/run_letsencrypt && chmod +x /etc/letssl/update_ssl
 # create config sample for let's encrypt
 mkdir -p /usr/local/letssl/
 cp ./usr/local/letssl/config-sample.ini /usr/local/letssl/
+
+# check if we have no errors
+if [ $? -eq 0 ]; then
+    echo "Setup completed. Add cron task, edit nginx let's encrypt configs"
+else
+    echo "Setup failed. Check errors above"
+fi
