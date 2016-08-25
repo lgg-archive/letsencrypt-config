@@ -35,7 +35,7 @@ Here you will found:
 * add task:
 ```
 # m h  dom mon dow   command
-0 0 */5 * * /etc/letssl/update_ssl >> /etc/letssl/update2.log
+0 0 */5 * * /etc/letssl/update_ssl >> /var/log/letssl/update2.log
 ```
 * this will renew check certificates for renewal every 5 days
 * expiration limit is set in `/etc/letssl/run_letsencrypt` on 7 line(`exp_limit=40;`)
@@ -78,8 +78,8 @@ error_page 497 https://google.com;
 ## TroubleShooting
 
 * check logs:
-    * `vi /etc/letssl/update.log`
-    * `vi /etc/letssl/update2.log`
+    * `vi /var/log/letssl/update.log`
+    * `vi /var/log/letssl/update2.log`
 * check if `site.com/.well-known/` is accessible
     * if not - allow it in your webservers's config
 * try to run it manually

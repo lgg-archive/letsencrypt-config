@@ -12,8 +12,8 @@ ls_lc - list configs
 ls -l /etc/letsencrypt/live
 
 ## logs
-vi /etc/letssl/update.log
-vi /etc/letssl/update2.log
+vi /var/log/letssl/update.log
+vi /var/log/letssl/update2.log
 
 
 

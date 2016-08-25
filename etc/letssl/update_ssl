@@ -1,5 +1,5 @@
 #!/bin/bash
-log='/etc/letssl/update.log'
+log='/var/log/letssl/update.log'
 
 echo "start updating"
 /etc/letssl/run_letsencrypt >> $log
