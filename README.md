@@ -15,6 +15,7 @@ Here you will found:
 ## Setup
 
 * [Installing of CertBot could be found here](https://github.com/certbot/certbot)
+    * scripts in this repo use this path for certbot: `/opt/certbot/`
 * installing this config:
     * `git clone https://github.com/lgg/letsencrypt-config && cd letsencrypt-config`
     * `chmod +x ./install.sh`
