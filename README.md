@@ -14,17 +14,26 @@ Here you will found:
 
 ## Setup
 
-[Installing of CertBot could be found here](https://github.com/certbot/certbot)
+* [Installing of CertBot could be found here](https://github.com/certbot/certbot)
+* installing this config:
+    * `git clone https://github.com/lgg/letsencrypt-config && cd letsencrypt-config`
+    * `chmod +x ./install.sh`
+    * `./install.sh`
+    * set configs for:
+        * cron
+        * nginx
+        * let's encrypt bot (`/usr/local/letssl/`)
 
 ### Certificates bot
-* create [aliases](./aliases.md)
-* `mkdir /etc/letssl`
-* paste files from repo's `/etc/letssl/` to your server `/etc/letssl/`
-* add execution right for scripts `chmod +x run_letsencrypt && chmod +x update_ssl`
-* `mkdir /usr/local/letssl`
-* paste `config-sample.ini` from repo to your server
-* rename it to `mv config-sample.ini sample`
-* copy it `cp sample site.com.ini`
+* _(optional)_ create [aliases](./aliases.md)
+* you can use `./install.sh` script or do it manually
+    * `mkdir /etc/letssl`
+    * paste files from repo's `/etc/letssl/` to your server `/etc/letssl/`
+    * add execution right for scripts `chmod +x run_letsencrypt && chmod +x update_ssl`
+    * `mkdir /usr/local/letssl`
+    * paste `config-sample.ini` from repo to your server
+    * rename it to `mv config-sample.ini sample`
+    * copy it `cp sample site.com.ini`
 * edit your config file(**IMPORTANT: config files should be with .ini extension**) `vi site.com.ini`
 * _you can skip this step_ try `/opt/certbot/certbot-auto certonly -a webroot --agree-tos --renew-by-default --config /usr/local/letssl/site.com.ini`
 * if previous step is successfully -> create cron task
@@ -86,4 +95,4 @@ error_page 497 https://google.com;
 * check your certificates and pathes in webserver's configs
 * check your params
 * search for your error in google
-* open issue and I hope I can help you
+* open issue and i hope i will able to help you
