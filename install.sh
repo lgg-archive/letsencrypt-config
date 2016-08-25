@@ -4,7 +4,7 @@
 mkdir /var/log/letssl/
 
 # add logrotate config
-cp ./etc/logrotate.d/logrotate_config /etc/logrotate.d/letsencrypt
+cp ./etc/logrotate.d/letsencrypt /etc/logrotate.d/letsencrypt
 
 # create /etc/letssl scripts
 mkdir /etc/letssl/
