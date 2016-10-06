@@ -100,3 +100,8 @@ error_page 497 https://google.com;
 * check your params
 * search for your error in google
 * open issue and i hope i will able to help you
+
+## License
+
+* MIT
+* 2016, lgg
