@@ -1,6 +1,6 @@
 # Let'sEncrypt Guide
 
-Here you will found:
+Here you will find:
 * auto-renewal scripts
 * auto-renewal installation
 
