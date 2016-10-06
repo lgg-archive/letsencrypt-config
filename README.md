@@ -26,6 +26,7 @@ Here you will found:
         * let's encrypt bot (`/usr/local/letssl/`)
 
 ### Certificates bot
+
 * _(optional)_ create [aliases](./aliases.md)
 * you can use `./install.sh` script or do it manually
     * `mkdir /etc/letssl`
