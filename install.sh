@@ -13,7 +13,7 @@ chmod +x /etc/letssl/run_letsencrypt && chmod +x /etc/letssl/update_ssl
 
 # create config sample for let's encrypt
 mkdir -p /usr/local/letssl/
-cp ./usr/local/letssl/config-sample.ini /usr/local/letssl/
+cp ./usr/local/letssl/config-sample.ini /usr/local/letssl/sample
 
 # check if we have no errors
 if [ $? -eq 0 ]; then
