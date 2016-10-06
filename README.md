@@ -69,26 +69,26 @@ Here is a sample for nginx configs, e.g. we have `site.com`:
 * for forcing https:
 ```
 server {
-        listen 80;
-        server_name site.com;
-        # enforce https
-        return 301 https://$server_name$request_uri;
+    listen 80;
+    server_name site.com;
+    # enforce https
+    return 301 https://$server_name$request_uri;
 }
 server {
-        listen 443 ssl;
-        server_name site.com;
+    listen 443 ssl;
+    server_name site.com;
 
-        # Add https strict header
-        add_header Strict-Transport-Security "max-age=63072000; includeSubDomains; preload;";
+    # Add https strict header
+    add_header Strict-Transport-Security "max-age=63072000; includeSubDomains; preload;";
 ```
 * ssl config:
 ```
 server {
-        listen 443 ssl;
-        server_name site.com;
+    listen 443 ssl;
+    server_name site.com;
 
-        ssl_certificate /etc/letsencrypt/live/site.com/fullchain.pem;
-        ssl_certificate_key /etc/letsencrypt/live/site.com/privkey.pem;
+    ssl_certificate /etc/letsencrypt/live/site.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/site.com/privkey.pem;
 ```
 * if you use php, don't forget to add `fastcgi_param HTTPS on;` to your php section
 * if you want to handle error(The plain HTTP request was sent to HTTPS port), when ssl is on another port(not 443) and somebody http://site.com:8888
