@@ -14,18 +14,27 @@ Here you will found:
 
 ## Setup
 
+### Auto installation
+
 * [Installing of CertBot could be found here](https://github.com/certbot/certbot)
     * scripts in this repo use this path for certbot: `/opt/certbot/`
 * installing this config:
     * `git clone https://github.com/lgg/letsencrypt-config && cd letsencrypt-config`
     * `chmod +x ./install.sh`
     * `./install.sh`
-    * set configs for:
+    * **!IMPORTANT!** you will need to run certbot manually for the first time
+        to install needed dependencies:     
+        `/opt/certbot/certbot-auto certonly -a webroot --agree-tos --renew-by-default --config /usr/local/letssl/site.com.ini`
+    * you will need manually set configs for:
         * cron
         * nginx
         * let's encrypt bot (`/usr/local/letssl/`)
-
-### Certificates bot
+* after this aliases will be also available:
+    * `ls_l` for listing available/issued certificates
+    * `ls_lc` for listing enabled let's encrypt configs 
+    * `ls_h` for let's encrypt and this configs help
+    
+### Manual installation
 
 * _(optional)_ create [aliases](./aliases.md)
 * you can use `./install.sh` script or do it manually
