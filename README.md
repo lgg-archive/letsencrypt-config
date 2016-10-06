@@ -36,7 +36,9 @@ Here you will found:
     * rename it to `mv config-sample.ini sample`
     * copy it `cp sample site.com.ini`
 * edit your config file(**IMPORTANT: config files should be with .ini extension**) `vi site.com.ini`
-* _you can skip this step_ try `/opt/certbot/certbot-auto certonly -a webroot --agree-tos --renew-by-default --config /usr/local/letssl/site.com.ini`
+* **!IMPORTANT!** you will need to run certbot manually for the first time
+    to install needed dependencies:     
+    `/opt/certbot/certbot-auto certonly -a webroot --agree-tos --renew-by-default --config /usr/local/letssl/site.com.ini`
 * if previous step is successfully -> create cron task
 
 ### Cron
