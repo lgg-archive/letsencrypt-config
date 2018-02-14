@@ -1,3 +1,9 @@
+# This project is outdated
+
+## Use official [certbot features](https://certbot.eff.org/docs/using.html#renewing-certificates)
+
+--- 
+
 # Let'sEncrypt Guide
 
 Here you will find:
